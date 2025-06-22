@@ -39,5 +39,24 @@ console.log(count);
 
 //section 3
 
+let family = {
+    parents: {},
+    children: [
+        { name: "Ali" },
+        { name: "Lea" },
+        { name: "Mona" }
+    ]
+};
+
+console.log(family.children[2].name);
+let str = "";
+for (let i = 0; i < family.children.length; i++) {
+    str += family.children[i].name;
+    str += ", "
+}
+console.log(str);
+
+
+//section 4
 
 
