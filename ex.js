@@ -59,4 +59,37 @@ console.log(str);
 
 //section 4
 
+const original = [1, 2, 3, 4, 5];
+const reversed = [];
+
+for (let i = original.length - 1; i >= 0; i--) {
+    reversed.push(original[i])
+}
+
+console.log(reversed);
+
+
+//section 5
+
+const mixedArray = [1, "hello", true, false, "world", 42];
+
+const countsOfType = {
+    number: 0,
+    string: 0,
+    boolean: 0,
+};
+
+
+for (const item of mixedArray) {
+
+    const type = typeof item;
+    if (countsOfType.hasOwnProperty(type)) {
+        countsOfType[type]++;
+
+    }
+}
+
+console.log(countsOfType);
+
+
 
