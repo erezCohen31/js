@@ -1,27 +1,20 @@
 //1
-const array = ["hello", 2, 3]
+const array = [1, 2, 3]
 function doubleValues(arr) {
-    const newArray = []
-    arr.forEach(element => {
-        newArray.push(element * 2)
-    });
-    return newArray
+    return arr.map(element => element * 2)
+
+
+
 }
 
-console.log(doubleValues(array));
+console.log("1   " + doubleValues(array));
 
 //2
 
 function onlyEvenValues(arr) {
-    const newArray = []
-    arr.forEach(element => {
-        if (element % 2 === 0) {
-            newArray.push(element)
-        }
-    })
-    return newArray
+    return arr.filter(element => element % 2 === 0)
 }
-console.log(onlyEvenValues(array));
+console.log("2   " + onlyEvenValues(array));
 
 //3
 function showFirstAndLast(arr) {
