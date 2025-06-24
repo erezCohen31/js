@@ -89,7 +89,130 @@ for (const item of mixedArray) {
     }
 }
 
-console.log(countsOfType);
+console.log(countsOfType)
 
 
+//section 6
 
+const numbers = [50, 200, 150, 90, 300]
+const numbersBigger100 = []
+
+numbers.forEach(element => {
+    if (element > 100) numbersBigger100.push(element)
+})
+
+console.log(numbersBigger100);
+
+//section 7
+
+const result = {
+    even: [],
+    odd: []
+};
+let divideBy2And3 = 0
+
+for (let i = 1; i <= 50; i++) {
+    if (i % 2 === 0) {
+        result.even.push(i)
+    }
+    else {
+        result.odd.push(i)
+    }
+    if (i % 2 === 0 && i % 3 === 0) {
+        divideBy2And3++
+    }
+}
+
+console.log(result);
+console.log(divideBy2And3);
+
+//section 8
+
+const Grid = []
+const length = 3
+
+for (let i = 0; i < length; i++) {
+    Grid[i] = []
+    for (let j = 0; j < length; j++) {
+        if (i === j || (i + j) == (length - 1)) {
+            Grid[i][j] = "#"
+        } else {
+            Grid[i][j] = " "
+        }
+    }
+}
+
+for (let i = 0; i < 3; i++) {
+    console.log(Grid[i].join(" "));
+}
+
+
+//section 9
+
+function frequencyCounter(str) {
+    const freq = {}
+    const cleanedStr = str.toLowerCase().replace(/[^a-z]/g, '');
+
+    for (const char of cleanedStr) {
+        if (freq[char]) {
+            freq[char]++;
+        } else {
+            freq[char] = 1;
+        }
+    }
+    return freq
+}
+
+
+console.log(frequencyCounter("Hello, World! This is an example."))
+
+
+//section 10 
+
+function flattenAndFilter(matrix) {
+    const result = [];
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            const num = matrix[i][j]
+            if (num >= 0) {
+                result.push(num)
+            }
+        }
+    }
+    return result
+}
+
+const matrix = [
+    [1, -2, 3],
+    [-4, 5, 6],
+    [7, 8, -9]
+];
+
+console.log(flattenAndFilter(matrix));
+
+
+//section 11
+
+function transformKeys(obj) {
+
+    const keys = Object.keys(obj).map(key => key.toUpperCase()).sort()
+
+    const newObj = {}
+
+    for (const key of keys) {
+        const originalKey = Object.keys(obj).find(k => k.toUpperCase() === key)
+        newObj[key] = obj[originalKey]
+    }
+    return newObj
+}
+
+
+const myObj = {
+    name: "Alice",
+    age: 30,
+    city: "Paris"
+};
+
+const result1 = transformKeys(myObj);
+console.log(result1);
