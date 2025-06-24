@@ -1,5 +1,5 @@
 //section 1
-
+/*
 let a = "some string"
 let b = "other string"
 
@@ -146,73 +146,94 @@ for (let i = 0; i < 3; i++) {
     console.log(Grid[i].join(" "));
 }
 
-
+*/
 //section 9
 
-function frequencyCounter(str) {
-    const freq = {}
-    const cleanedStr = str.toLowerCase().replace(/[^a-z]/g, '');
+const str = "Hello, World! This is an example."
+const freq = {}
+const cleanedStr = str.toLowerCase().replace(/[^a-z]/g, '');
 
-    for (const char of cleanedStr) {
-        if (freq[char]) {
-            freq[char]++;
-        } else {
-            freq[char] = 1;
-        }
+for (const char of cleanedStr) {
+    if (freq[char]) {
+        freq[char]++;
+    } else {
+        freq[char] = 1;
     }
-    return freq
 }
 
 
-console.log(frequencyCounter("Hello, World! This is an example."))
+
+console.log(freq)
 
 
 //section 10 
-
-function flattenAndFilter(matrix) {
-    const result = [];
-
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            const num = matrix[i][j]
-            if (num >= 0) {
-                result.push(num)
-            }
-        }
-    }
-    return result
-}
 
 const matrix = [
     [1, -2, 3],
     [-4, 5, 6],
     [7, 8, -9]
 ];
+const result = [];
 
-console.log(flattenAndFilter(matrix));
-
-
-//section 11
-
-function transformKeys(obj) {
-
-    const keys = Object.keys(obj).map(key => key.toUpperCase()).sort()
-
-    const newObj = {}
-
-    for (const key of keys) {
-        const originalKey = Object.keys(obj).find(k => k.toUpperCase() === key)
-        newObj[key] = obj[originalKey]
+for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        const num = matrix[i][j]
+        if (num >= 0) {
+            result.push(num)
+        }
     }
-    return newObj
 }
 
 
-const myObj = {
+console.log(result);
+
+
+//section 11
+const obj = {
     name: "Alice",
     age: 30,
     city: "Paris"
 };
 
-const result1 = transformKeys(myObj);
-console.log(result1);
+
+const keys = Object.keys(obj).map(key => key.toUpperCase()).sort()
+
+const newObj = {}
+
+for (const key of keys) {
+    const originalKey = Object.keys(obj).find(k => k.toUpperCase() === key)
+    newObj[key] = obj[originalKey]
+}
+
+
+
+
+
+console.log(newObj);
+
+//section 12
+
+for (let i = 0; i < 4; i++) {
+    let str = ""
+    for (let j = 0; j < i; j++) {
+        str += "*"
+    }
+    console.log(str);
+
+
+}
+
+//section 13
+
+const A = [1, 2, 2, 3, 4];
+const B = [2, 2, 3, 5];
+
+const setA = new Set(A)
+const setB = new Set(B)
+
+const AB = [...setA, ...setB];
+
+const setAB = new Set(AB)
+console.log(setAB.size);
+
+
