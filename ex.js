@@ -146,7 +146,7 @@ for (let i = 0; i < 3; i++) {
     console.log(Grid[i].join(" "));
 }
 
-*/
+
 //section 9
 
 const str = "Hello, World! This is an example."
@@ -227,13 +227,7 @@ for (let i = 0; i < 4; i++) {
 
 const A = [1, 2, 2, 3, 4];
 const B = [2, 2, 3, 5];
-
-const setA = new Set(A)
-const setB = new Set(B)
-
-const AB = [...setA, ...setB];
-
-const setAB = new Set(AB)
+const setAB = new Set([...A, ...B]);
 console.log(setAB.size);
 
-
+*/
