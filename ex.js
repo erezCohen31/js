@@ -230,4 +230,155 @@ const B = [2, 2, 3, 5];
 const setAB = new Set([...A, ...B]);
 console.log(setAB.size);
 
+
+
+//section 14
+
+const obj = {
+    a: "apple",
+    b: 42,
+    c: true,
+    d: "banana"
+};
+
+const newObj = {}
+const keys = Object.keys(obj)
+
+for (const key of keys) {
+    const val = obj[key]
+    console.log(key);
+
+    if (typeof val === `string` || typeof val === `number`)
+        newObj[obj[key]] = key
+}
+
+console.log(newObj);
+
+//section 15
+const grid = []
+const length = 5
+
+for (let i = 0; i < length; i++) {
+    const arr = []
+    for (let j = 0; j < length; j++) {
+        if (i === 2) {
+            arr.push(9)
+        }
+        else if (i === j) {
+            arr.push(1)
+        } else {
+            arr.push(0)
+        }
+    }
+    grid.push(arr)
+}
+
+console.log(grid);
+
+//section 16
+const users = [
+    { name: "Alice", active: true, age: 20 },
+    { name: "Bob", active: false, age: 17 },
+    { name: "Charlie", active: true, age: 16 },
+    { name: "David", active: false, age: 15 },
+    { name: "Eve", active: true, age: 22 }
+];
+let count = 0
+users.forEach(element => {
+    if (element.active && element.age > 18) {
+        console.log(element);
+    } else {
+        count++
+    }
+})
+console.log(count);
+
+
+//section 17
+
+const numbers = [4, 10, -3, 7, 22, 0];
+
+let min = numbers[0]
+let max = numbers[0]
+
+for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+        min = numbers[i]
+    }
+    if (numbers[i] > max) {
+        max = numbers[i]
+    }
+}
+console.log(`min: ${min}`);
+
+console.log(`max: ${max}`);
+
+
+//section 18
+
+for (let i = 0; i < 3; i++) {
+    const first = numbers.shift();
+    numbers.push(first);
+}
+
+console.log(numbers);
 */
+//section 19
+
+
+const obj = { name: "Ali", age: 25 };
+
+let strObj = ""
+
+const keys = Object.keys(obj)
+strObj += "{"
+for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    const val = obj[key];
+
+    strObj += `"${key}": `;
+
+    if (typeof val === "string") {
+        strObj += `"${val}"`;
+    } else {
+        strObj += `${val}`;
+    }
+
+    if (i < keys.length - 1) {
+        strObj += ", ";
+    }
+}
+strObj += "}"
+console.log(strObj);
+
+
+//section 20
+
+
+
+const grid = [
+    ["O", "", "", ""],
+    ["O", "", "", ""],
+    ["O", "", "", ""],
+    ["", "", "", ""]
+]
+
+
+
+for (let i = 0; i < grid.length; i++) {
+    let countORow = 0
+    let countOCol = 0
+
+    for (let j = 0; j < grid[i].length; j++) {
+        if (grid[i][j] === "O") {
+            countORow++
+        }
+        if (grid[j][i] === "O") {
+            countOCol++
+        }
+        if (countOCol > 2 || countORow > 2) {
+            console.log("error");
+            break
+        }
+    }
+}
